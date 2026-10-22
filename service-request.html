@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#101010">
+ <meta name="description" content="Prepare a service enquiry for Cup of Work. Review your message before sending it by WhatsApp or email.">
+ <title>Service Enquiry | Cup of Work</title>
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101010'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='800' text-anchor='middle' fill='%23F5C542' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E">
+ <style>
+  :root{color-scheme:dark;--black:#101010;--panel:#191919;--gold:#F5C542;--white:#FAF9F6;--muted:#B8B8B8;--border:#343434}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:var(--black);color:var(--white);font:400 1rem/1.65 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
+  a{color:inherit}
+  a:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+  .page{width:min(100% - 2rem,760px);margin:0 auto;padding:1.5rem 0 3rem}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+  .brand{display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;font-weight:800;letter-spacing:-.02em}
+  .brand img{display:block;width:48px;height:48px;object-fit:cover;border-radius:50%}
+  .home-link{color:var(--muted);font-size:.94rem;text-decoration:none}
+  .home-link:hover,.back-link:hover{color:var(--gold)}
+  main{padding-top:clamp(2.5rem,8vw,5rem)}
+  .eyebrow{margin:0 0 .7rem;color:var(--gold);font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  h1{margin:0 0 .85rem;font-size:clamp(2rem,6vw,3.5rem);line-height:1.1;letter-spacing:-.04em}
+  .description{max-width:62ch;margin:0;color:var(--muted);font-size:1.05rem}
+  .message-panel{margin-top:2rem;padding:clamp(1.15rem,4vw,2rem);border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+  h2{margin:0 0 .35rem;font-size:1.15rem}
+  .hint{margin:0 0 1rem;color:var(--muted);font-size:.92rem}
+  label{display:block;margin-bottom:.45rem;font-size:.92rem;font-weight:700}
+  textarea{display:block;width:100%;min-height:240px;resize:vertical;padding:1rem;border:1px solid #555;border-radius:10px;background:#101010;color:var(--white);font:inherit;line-height:1.65}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}
+  .button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:.75rem 1.2rem;border:2px solid var(--gold);border-radius:999px;background:var(--gold);color:var(--black);font:800 .98rem/1.2 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;transition:background .2s,color .2s}
+  .button:hover{background:#ffd966}
+  .button.secondary{background:transparent;color:var(--gold)}
+  .button.secondary:hover{background:var(--gold);color:var(--black)}
+  .button[aria-disabled="true"]{opacity:.45;pointer-events:none}
+  .notice{margin:1rem 0 0;color:#ffd966}
+  .back-link{display:inline-block;margin-top:1.5rem;color:var(--muted);text-decoration:none}
+  footer{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+  @media(max-width:480px){.page{width:min(100% - 1.25rem,760px)}.topbar{align-items:flex-start}.brand{gap:.6rem}.brand img{width:40px;height:40px}.home-link{font-size:.88rem}.actions{flex-direction:column}.button{width:100%}}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+ </style>
+</head>
+<body>
+ <div class="page">
+  <header class="topbar">
+   <a class="brand" href="index.html" aria-label="Cup of Work home">
+    <img src="Minimalist%20Golden%20Steam%20Coffee%20Cup.png" alt="">
+    <span>Cup of Work</span>
+   </a>
+   <a class="home-link" href="index.html">Back to home</a>
+  </header>
+  <main>
+   <p class="eyebrow">Service enquiry</p>
+   <h1 id="service-title">Preparing your enquiry</h1>
+   <p class="description" id="service-description">Choose a service from the Cup of Work home page to prepare a tailored enquiry.</p>
+   <section class="message-panel" aria-labelledby="message-heading">
+    <h2 id="message-heading">Your message</h2>
+    <p class="hint">Review and edit this draft before opening WhatsApp or your email app. Nothing is sent automatically.</p>
+    <label for="message">Enquiry message</label>
+    <textarea id="message" spellcheck="true" aria-describedby="message-hint" disabled></textarea>
+    <span id="message-hint" hidden>You can edit this message before sending.</span>
+    <div class="actions">
+     <a class="button" id="whatsapp-link" href="#" aria-disabled="true" tabindex="-1">Continue to WhatsApp</a>
+     <a class="button secondary" id="email-link" href="#" aria-disabled="true" tabindex="-1">Prepare email</a>
+    </div>
+    <p class="notice" id="notice" role="status" aria-live="polite">Select a service from the home page to continue.</p>
+   </section>
+   <a class="back-link" href="index.html">← Back to Cup of Work home</a>
+  </main>
+  <footer>© <span id="year">2026</span> Cup of Work. Please review your enquiry before sending.</footer>
+ </div>
+ <script>
+  const services = {
+   "research-data": {
+    title: "Research & Data Support",
+    description: "Get help gathering, organizing, cleaning, and presenting useful research or spreadsheet data.",
+    prompts: ["Project or research requirements:", "Data sources or materials available:", "Desired spreadsheet, summary, or other deliverables:"]
+   },
+   "writing-content": {
+    title: "Writing & Content Development",
+    description: "Discuss clear, audience-focused written content, scripts, copywriting, editing, or proofreading.",
+    prompts: ["Content type and topic:", "Audience, purpose, and preferred tone:", "Length and desired deliverables:"]
+   },
+   "translation-editing": {
+    title: "English Translation & Editing",
+    description: "Request English-language editing, proofreading, formatting, or suitable English–Sinhala translation.",
+    prompts: ["Document or content type:", "Editing or translation requirements:", "Approximate length and desired deliverables:"]
+   },
+   "graphic-logo": {
+    title: "Graphic & Logo Design",
+    description: "Plan visual assets such as social graphics, posters, banners, logo concepts, thumbnails, or presentation visuals.",
+    prompts: ["Design or asset needed:", "Brand, audience, and visual references:", "Required formats and deliverables:"]
+   },
+   "video-youtube": {
+    title: "Video Editing & YouTube Support",
+    description: "Discuss editing, trimming, captions, audio balancing, short-form video, or YouTube post-production.",
+    prompts: ["Video type, length, and platform:", "Editing requirements and available footage:", "Desired final formats or deliverables:"]
+   },
+   "website-projects": {
+    title: "Website & Digital Project Support",
+    description: "Get practical support with a landing page, website content, selected Shopify tasks, or digital project planning.",
+    prompts: ["Website or digital project requirements:", "Current platform, materials, or reference links:", "Desired functionality and deliverables:"]
+   }
+  };
+  const emailAddress = "piyajalakmanaarachchi@gmail.com";
+  const whatsappNumber = "94785599834";
+  const title = document.getElementById("service-title");
+  const description = document.getElementById("service-description");
+  const message = document.getElementById("message");
+  const whatsappLink = document.getElementById("whatsapp-link");
+  const emailLink = document.getElementById("email-link");
+  const notice = document.getElementById("notice");
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function disableLink(link) {
+   link.href = "#";
+   link.setAttribute("aria-disabled", "true");
+   link.tabIndex = -1;
+  }
+
+  function updateContactLinks(serviceTitle) {
+   const draft = message.value;
+   whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(draft)}`;
+   emailLink.href = `mailto:${emailAddress}?subject=${encodeURIComponent(`Project Enquiry - ${serviceTitle}`)}&body=${encodeURIComponent(draft)}`;
+   whatsappLink.removeAttribute("aria-disabled");
+   whatsappLink.removeAttribute("tabindex");
+   emailLink.removeAttribute("aria-disabled");
+   emailLink.removeAttribute("tabindex");
+  }
+
+  const serviceKey = new URLSearchParams(window.location.search).get("service");
+  const selectedService = serviceKey && Object.prototype.hasOwnProperty.call(services, serviceKey) ? services[serviceKey] : undefined;
+  if (selectedService) {
+   title.textContent = selectedService.title;
+   description.textContent = selectedService.description;
+   message.disabled = false;
+   document.getElementById("message-hint").hidden = false;
+   message.value = [
+    "Hello Cup of Work,",
+    "",
+    `I would like to enquire about your ${selectedService.title} service.`,
+    "",
+    ...selectedService.prompts,
+    "Preferred deadline:",
+    "Optional budget:",
+    "",
+    "Please let me know the next steps. Thank you."
+   ].join("\n");
+   notice.textContent = "Your draft is ready. Review or edit it before continuing.";
+   updateContactLinks(selectedService.title);
+   message.addEventListener("input", () => updateContactLinks(selectedService.title));
+  } else {
+   title.textContent = "Service not selected";
+   description.textContent = "This service link is missing or invalid. Return to the home page and choose a service to prepare an enquiry.";
+   message.value = "";
+   disableLink(whatsappLink);
+   disableLink(emailLink);
+   notice.textContent = "No message has been prepared. Please choose one of the six services on the home page.";
+  }
+ </script>
+</body>
+</html>

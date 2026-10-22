@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cup of Work | Digital Services &amp; Project Support</title>
+<meta name="description" content="Cup of Work offers project-based digital support in research, data organization, writing, design, video editing, and more.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cup of Work | Digital Services &amp; Project Support">
+<meta property="og:description" content="Project-based digital support in research, data organization, writing, design, video editing, and more.">
+<meta property="og:image" content="Golden%20Coffee%20Cup%20Tech%20Hub.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23101010'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='800' text-anchor='middle' fill='%23F5C542' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#101010;--gold:#F5C542;--white:#FAF9F6;--char:#222;--grey:#B8B8B8;--text:#242424;--gold-dk:#7a5c00;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font:400 1.0625rem/1.65 Manrope,system-ui,sans-serif;background:var(--white);color:var(--text)}
+h1,h2,h3{line-height:1.15;margin:0 0 .6em;font-weight:800;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,6vw,4.4rem)}h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}h3{font-size:1.2rem}
+p{margin:0 0 1em}
+a{color:inherit}
+section{padding:clamp(3.5rem,8vw,6rem) 1.25rem;scroll-margin-top:64px}
+.wrap{max-width:1120px;margin:0 auto}
+.dark{background:var(--black);color:#fff}.dark .muted{color:var(--grey)}
+.char{background:var(--char);color:#fff}.char .muted{color:var(--grey)}
+.label{font-weight:700;font-size:.9rem;color:var(--gold-dk);margin-bottom:.6rem}
+.dark .label,.char .label{color:var(--gold)}
+.lead{max-width:62ch}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.light :focus-visible,.on-light:focus-visible{outline-color:var(--black)}
+.btn{display:inline-block;padding:.85em 1.5em;border-radius:999px;font:700 1rem Manrope,sans-serif;text-decoration:none;border:2px solid var(--gold);background:var(--gold);color:var(--black);cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:#ffd966}
+.btn.ghost{background:transparent;color:#fff}.btn.ghost:hover{background:var(--gold);color:var(--black)}
+.btn.blk{background:var(--black);border-color:var(--black);color:#fff}.btn.blk:hover{background:#333}
+.btn.sm{padding:.55em 1.1em;font-size:.92rem}
+/* header */
+header{position:sticky;top:0;z-index:20;background:var(--black);border-bottom:1px solid #2c2c2c}
+.nav{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;padding:.7rem 1.25rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;font-weight:800;text-decoration:none;margin-right:auto}
+.mark{width:34px;height:34px;border-radius:9px;background:var(--gold);color:var(--black);display:grid;place-items:center;font-weight:800}
+.nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--grey);text-decoration:none;font-weight:500;font-size:.95rem}.nav ul a:hover{color:var(--gold)}
+#menuBtn{display:none;background:none;border:1px solid #444;color:#fff;border-radius:8px;padding:.45rem .7rem;font:inherit;cursor:pointer}
+@media(max-width:860px){
+ #menuBtn{display:block}.nav .btn{display:none}
+ .nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--black);padding:1rem 1.25rem 1.4rem;gap:1rem;border-bottom:1px solid #2c2c2c}
+ .nav ul.open{display:flex}.nav ul a{font-size:1.05rem}
+ .nav ul .m-cta{display:block}
+}
+.m-cta{display:none}
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero p.big{font-size:1.15rem;color:#e6e6e6;max-width:52ch}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.6rem 0}
+.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;list-style:none;padding:0;margin:0;color:var(--grey);font-size:.95rem}
+.trust li::before{content:"✓ ";color:var(--gold);font-weight:800}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.frame{border-radius:var(--r);border:1px solid #333;background:var(--char);padding:.8rem}
+svg.shot{display:block;width:100%;height:auto;border-radius:10px}
+.frame video.shot{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.about-image-frame{aspect-ratio:8/5;padding:0;overflow:hidden}
+.about-image-frame img.shot{width:100%;height:100%;object-fit:cover}
+/* about */
+.split{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:start}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+blockquote{margin:1.5rem 0 0;padding:.4rem 0 .4rem 1.2rem;border-left:4px solid var(--gold);font-weight:700;font-size:1.2rem}
+/* grids */
+.grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));margin-top:2rem}
+.card{background:var(--char);border:1px solid #333;border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column}
+.card h3{color:#fff}.card p{color:var(--grey);font-size:.98rem}
+.card ul{margin:0 0 1.2rem;padding-left:1.1rem;color:#dcdcdc;font-size:.93rem}
+.card .btn{margin-top:auto;align-self:flex-start}
+.video-card{position:relative;isolation:isolate;overflow:hidden;background:transparent}
+.video-card video{position:absolute;inset:-4px;z-index:0;width:calc(100% + 8px);height:calc(100% + 8px);object-fit:cover;filter:blur(3px);pointer-events:none}
+.video-card::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.48);pointer-events:none}
+.video-card>:not(video){position:relative;z-index:2}
+.video-card h3,.video-card p,.video-card ul{color:#fff}
+.ico{width:46px;height:46px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1rem}
+.note{margin-top:1.5rem;font-size:.92rem;color:var(--grey);max-width:70ch}
+.work{background:#fff;border:1px solid #e3e0d8;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.work .body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.work svg.shot{border-radius:0}
+.tag{align-self:flex-start;font-size:.8rem;font-weight:700;background:var(--black);color:var(--gold);padding:.2em .7em;border-radius:99px;margin-bottom:.7rem}
+.work .cat{font-size:.88rem;color:var(--gold-dk);font-weight:700;margin-bottom:.2rem}
+.work p{font-size:.96rem}.work .btn{margin-top:auto;align-self:flex-start}
+.light-card{background:#fff;border:1px solid #e3e0d8;border-radius:var(--r);padding:1.5rem}
+.light-card .ico{stroke:var(--black)}
+.light-card p{color:#4a4a4a;margin:0}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;list-style:none;padding:0;margin:2rem 0}
+.steps li{border-top:4px solid var(--black);padding-top:1rem}
+.steps .n{font-weight:800;font-size:1.8rem;color:var(--gold-dk)}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+/* callout */
+.callout{background:var(--gold);color:var(--black)}
+.callout .wrap{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between}
+.callout p{max-width:60ch;margin:0}
+/* contact */
+.cgrid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:2rem 0}
+.cgrid .light-card{display:flex;flex-direction:column;align-items:flex-start;border-top:4px solid var(--gold)}
+.cgrid .btn{margin-top:auto}
+form{display:grid;gap:1rem;grid-template-columns:1fr 1fr;background:#fff;border:1px solid #e3e0d8;border-radius:var(--r);padding:1.5rem}
+form .full{grid-column:1/-1}
+label{display:block;font-weight:700;font-size:.92rem;margin-bottom:.3rem}
+input,select,textarea{width:100%;padding:.7em .8em;border:1.5px solid #9a9a9a;border-radius:10px;font:inherit;background:#fff;color:var(--text)}
+textarea{min-height:110px;resize:vertical}
+@media(max-width:620px){form{grid-template-columns:1fr}}
+.small{font-size:.9rem;color:#555}
+/* faq */
+details{background:#fff;border:1px solid #e3e0d8;border-radius:12px;margin-bottom:.8rem}
+summary{cursor:pointer;padding:1rem 1.25rem;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--gold-dk)}
+details[open] summary::after{content:"–"}
+details p{padding:0 1.25rem;margin:0 0 1.1rem;color:#444}
+/* footer */
+footer{background:var(--black);color:var(--grey);padding:3rem 1.25rem 2rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between}
+footer a{color:var(--grey);text-decoration:none}footer a:hover{color:var(--gold)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.soc{display:flex;gap:.8rem;margin-top:1rem}
+.soc a{width:42px;height:42px;border:1px solid #444;border-radius:50%;display:grid;place-items:center;color:var(--gold)}
+.soc svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.copy{border-top:1px solid #2c2c2c;margin-top:2rem;padding-top:1.2rem;font-size:.9rem;width:100%}
+</style>
+</head>
+<body>
+
+<!-- Icon + sample-artwork library (reused below). Replace the m1–m6 mockups with real images later. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-sheet" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="32" rx="4"/><path d="M6 18h36M6 28h36M20 8v32"/></symbol>
+ <symbol id="i-pen" viewBox="0 0 48 48"><path d="M8 40l4-12L32 8l8 8-20 20z M28 12l8 8"/></symbol>
+ <symbol id="i-lang" viewBox="0 0 48 48"><path d="M6 12h22M17 8v4M10 12c2 8 8 14 16 16M24 12c-2 8-8 14-16 16M26 40l8-20 8 20M29 34h10"/></symbol>
+ <symbol id="i-design" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="16" cy="22" r="2"/><circle cx="24" cy="14" r="2"/><circle cx="33" cy="22" r="2"/><path d="M24 41c-4 0-4-5 0-6s4-5 8-4"/></symbol>
+ <symbol id="i-film" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="28" rx="4"/><path d="M18 18l12 6-12 6z M6 16h4M6 24h4M6 32h4M38 16h4M38 24h4M38 32h4"/></symbol>
+ <symbol id="i-web" viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="32" rx="4"/><path d="M5 17h38M11 13h.1M16 13h.1M12 25h14M12 31h10M31 25h6v8h-6z"/></symbol>
+ <symbol id="i-chat" viewBox="0 0 48 48"><path d="M8 12h32v20H20l-8 7v-7H8z M16 20h16M16 26h10"/></symbol>
+ <symbol id="i-whatsapp" viewBox="0 0 48 48"><path d="M8 39l2.6-8A17 17 0 1 1 17 37z"/><path d="M18 16c-.6-1.2-1.2-1.2-1.8-1.2-.5 0-1 .1-1.4.7-.5.6-1.8 1.8-1.8 4.4s1.9 5 2.2 5.4c.3.4 3.7 5.9 9.1 8 4.5 1.8 5.4 1.4 6.4 1.3 1-.1 3.2-1.3 3.6-2.6.5-1.3.5-2.4.3-2.6-.2-.2-.5-.4-1.1-.7-.6-.3-3.2-1.6-3.7-1.8-.5-.2-.9-.3-1.3.3-.4.6-1.5 1.8-1.8 2.2-.3.4-.7.5-1.3.2-.6-.3-2.4-.9-4.5-2.8-1.7-1.5-2.8-3.3-3.1-3.9-.3-.6 0-.9.2-1.2.3-.3.6-.7.9-1 .3-.3.4-.6.6-1 .2-.4.1-.7 0-1-.1-.3-1.3-3.1-1.7-4.2z"/></symbol>
+ <symbol id="i-email" viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="4"/><path d="M7 14l17 13 17-13"/></symbol>
+ <symbol id="i-target" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="8"/><path d="M24 24h.1"/></symbol>
+ <symbol id="i-eye" viewBox="0 0 48 48"><path d="M4 24s8-14 20-14 20 14 20 14-8 14-20 14S4 24 4 24z"/><circle cx="24" cy="24" r="6"/></symbol>
+ <symbol id="i-flex" viewBox="0 0 48 48"><path d="M8 16h24M26 10l6 6-6 6M40 32H16M22 26l-6 6 6 6"/></symbol>
+ <symbol id="m1" viewBox="0 0 320 200"><rect width="320" height="200" fill="#fff"/><rect width="320" height="28" fill="#F5C542"/><g stroke="#ddd"><path d="M0 56h320M0 84h320M0 112h320M0 140h320M0 168h320M80 28v172M160 28v172M240 28v172"/></g><g fill="#242424"><rect x="10" y="9" width="50" height="9"/><rect x="90" y="9" width="40" height="9"/><rect x="170" y="9" width="40" height="9"/><rect x="250" y="9" width="40" height="9"/></g><g fill="#B8B8B8"><rect x="10" y="38" width="55" height="7"/><rect x="90" y="38" width="30" height="7"/><rect x="170" y="38" width="45" height="7"/><rect x="10" y="66" width="40" height="7"/><rect x="90" y="66" width="50" height="7"/><rect x="250" y="66" width="30" height="7"/><rect x="10" y="94" width="60" height="7"/><rect x="170" y="94" width="35" height="7"/><rect x="90" y="122" width="40" height="7"/><rect x="250" y="122" width="45" height="7"/><rect x="10" y="150" width="50" height="7"/><rect x="170" y="150" width="50" height="7"/></g></symbol>
+ <symbol id="m2" viewBox="0 0 320 200"><rect width="320" height="200" fill="#222"/><rect x="70" y="14" width="180" height="172" rx="6" fill="#FAF9F6"/><rect x="88" y="32" width="90" height="10" fill="#101010"/><g fill="#B8B8B8"><rect x="88" y="56" width="144" height="6"/><rect x="88" y="70" width="130" height="6"/><rect x="88" y="84" width="144" height="6"/></g><rect x="88" y="106" width="60" height="8" fill="#F5C542"/><g fill="#B8B8B8"><rect x="88" y="124" width="144" height="6"/><rect x="88" y="138" width="110" height="6"/><rect x="88" y="152" width="136" height="6"/></g></symbol>
+ <symbol id="m3" viewBox="0 0 320 200"><rect width="320" height="200" fill="#222"/><rect x="80" y="10" width="160" height="180" rx="8" fill="#F5C542"/><rect x="98" y="30" width="90" height="14" fill="#101010"/><rect x="98" y="52" width="124" height="14" fill="#101010"/><rect x="98" y="84" width="100" height="6" fill="#242424"/><rect x="98" y="98" width="80" height="6" fill="#242424"/><rect x="98" y="150" width="64" height="22" rx="11" fill="#101010"/></symbol>
+ <symbol id="m4" viewBox="0 0 320 200"><rect width="320" height="200" fill="#FAF9F6"/><rect x="20" y="20" width="130" height="160" rx="8" fill="#101010"/><rect x="52" y="52" width="66" height="66" rx="16" fill="#F5C542"/><rect x="40" y="140" width="90" height="8" fill="#B8B8B8"/><g><rect x="170" y="20" width="130" height="34" fill="#101010"/><rect x="170" y="62" width="130" height="34" fill="#F5C542"/><rect x="170" y="104" width="130" height="34" fill="#222"/><rect x="170" y="146" width="130" height="34" fill="#B8B8B8"/></g></symbol>
+ <symbol id="m5" viewBox="0 0 320 200"><rect width="320" height="200" fill="#101010"/><rect x="90" y="12" width="140" height="80" rx="6" fill="#222"/><path d="M148 38l28 14-28 14z" fill="#F5C542"/><g><rect x="14" y="110" width="292" height="16" rx="3" fill="#222"/><rect x="14" y="132" width="292" height="16" rx="3" fill="#222"/><rect x="14" y="154" width="292" height="16" rx="3" fill="#222"/><rect x="20" y="112" width="90" height="12" rx="2" fill="#F5C542"/><rect x="116" y="112" width="70" height="12" rx="2" fill="#B8B8B8"/><rect x="40" y="134" width="120" height="12" rx="2" fill="#B8B8B8"/><rect x="30" y="156" width="200" height="12" rx="2" fill="#7a5c00"/></g><rect x="150" y="104" width="2" height="72" fill="#F5C542"/></symbol>
+ <symbol id="m6" viewBox="0 0 320 200"><rect width="320" height="200" fill="#222"/><rect x="20" y="20" width="210" height="150" rx="6" fill="#FAF9F6"/><rect x="20" y="20" width="210" height="14" fill="#101010"/><rect x="36" y="52" width="100" height="14" fill="#101010"/><rect x="36" y="74" width="140" height="6" fill="#B8B8B8"/><rect x="36" y="90" width="50" height="16" rx="8" fill="#F5C542"/><rect x="36" y="124" width="52" height="34" fill="#B8B8B8"/><rect x="96" y="124" width="52" height="34" fill="#B8B8B8"/><rect x="156" y="124" width="52" height="34" fill="#B8B8B8"/><rect x="246" y="48" width="56" height="120" rx="8" fill="#FAF9F6"/><rect x="254" y="62" width="40" height="10" fill="#101010"/><rect x="254" y="80" width="40" height="5" fill="#B8B8B8"/><rect x="254" y="94" width="26" height="10" rx="5" fill="#F5C542"/></symbol>
+</svg>
+
+<header>
+ <div class="nav">
+  <a class="brand" href="#home">
+  <img src="logo.png"
+       alt=""
+       width="40"
+       height="40"
+      style="object-fit:contain;border-radius:50%">
+  <span>Cup of Work</span>
+</a>
+  <!-- Replace the "C" mark with your real logo: <img src="images/logo.svg" alt="Cup of Work" height="34"> -->
+  <button id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <ul id="menu">
+   <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+   <li><a href="#work">Our Work</a></li><li><a href="#process">How It Works</a></li><li><a href="#contact">Contact Us</a></li>
+   <li class="m-cta"><a class="btn" href="#contact">Start a Project</a></li>
+  </ul>
+  <a class="btn sm" href="#contact">Start a Project</a>
+ </div>
+</header>
+
+<main>
+<section id="home" class="dark hero">
+ <div class="wrap">
+  <div>
+   <p class="label">Your digital project partner</p>
+   <h1>Your Ideas. Our Work.</h1>
+   <p class="big">From research and data organization to writing, design, and video editing, Cup of Work provides practical digital support to help individuals and businesses move their projects forward.</p>
+   <p class="muted">Flexible, project-based services. Clear communication. Work tailored to your requirements.</p>
+   <div class="btns"><a class="btn" href="#services">Explore Our Services</a><a class="btn ghost" href="#contact">Contact Us</a></div>
+   <ul class="trust"><li>Project-based support</li><li>Clear communication</li><li>Tailored deliverables</li></ul>
+  </div>
+  <div class="frame">
+   <video class="shot" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="Office%20work.mp4" type="video/mp4"></video>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="light">
+ <div class="wrap split">
+  <div>
+   <p class="label">Get to know us</p>
+   <h2>Who Are We?</h2>
+   <p>Cup of Work is a digital services brand built around one simple idea: good work starts with understanding what a project actually needs.</p>
+   <p>We help businesses, entrepreneurs, and content creators with practical digital tasks across research, data management, writing, design, and video editing. Whether you need information organized into a clear spreadsheet, written content refined, a visual asset created, or a video edited, our goal is to deliver work that fits your brief and helps you move forward.</p>
+   <p>We believe in clear communication, realistic deadlines, attention to detail, and a straightforward project-based approach. Every project begins with understanding your requirements, agreeing on the deliverables, and working toward a result that meets your needs.</p>
+   <p>Cup of Work is designed to be flexible: you bring the idea or challenge, and we work with you to find a practical solution.</p>
+   <blockquote>“Your project deserves attention to detail—not a one-size-fits-all solution.”</blockquote>
+  </div>
+  <div class="frame about-image-frame"><img class="shot" src="Golden%20Coffee%20Cup%20Tech%20Hub.png" alt="Golden coffee cup surrounded by digital service icons"></div>
+ </div>
+</section>
+
+<section id="services" class="dark">
+ <div class="wrap">
+  <p class="label">Our services</p>
+  <h2>Digital Support for Your Next Project</h2>
+  <p class="muted lead">Different projects need different skills. Explore our services and choose the support that fits your goals.</p>
+  <div class="grid">
+  <article class="card video-card">
+   <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="16518972_1080_1920_25fps.mp4" type="video/mp4"></video>
+   <svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-sheet"/></svg>
+   <h3>Research &amp; Data Support</h3>
+   <p>Turn scattered information into organized, useful material. We help gather relevant information, structure datasets, and prepare clear spreadsheets and research summaries.</p>
+   <ul>
+    <li>Online research and information gathering</li>
+    <li>Google Sheets organization and formatting</li>
+    <li>Data cleaning and structured data entry</li>
+    <li>Spreadsheet summaries and basic data analysis</li>
+    <li>PDF and document data organization</li>
+   </ul>
+   <a class="btn sm ghost pick" href="service-request.html?service=research-data" data-service="Research & Data Support">Discuss This Service</a>
+  </article>
+   <article class="card video-card"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="Writing%20%26%20Content%20Development%20video.mp4" type="video/mp4"></video><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-pen"/></svg><h3>Writing &amp; Content Development</h3><p>Communicate your ideas clearly with written content shaped around your audience, purpose, and preferred tone.</p><ul><li>Blog and website content drafts</li><li>YouTube video scripts</li><li>Podcast script drafts and outlines</li><li>Copywriting for digital content</li><li>Editing and proofreading</li></ul><a class="btn sm ghost pick" href="service-request.html?service=writing-content" data-service="Writing & Content Development">Discuss This Service</a></article>
+   <article class="card video-card"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="Translating%20video.mp4" type="video/mp4"></video><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-lang"/></svg><h3>English Translation &amp; Editing</h3><p>Improve clarity, readability, and consistency in English-language documents and digital content.</p><ul><li>English-language editing</li><li>Grammar and readability improvements</li><li>Proofreading and formatting</li><li>English–Sinhala translation where suitable</li></ul><a class="btn sm ghost pick" href="service-request.html?service=translation-editing" data-service="English Translation & Editing">Discuss This Service</a></article>
+   <article class="card video-card"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="Graphic%20designing%20video.mp4" type="video/mp4"></video><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-design"/></svg><h3>Graphic &amp; Logo Design</h3><p>Create clear, consistent visual assets that help your project communicate its identity and message.</p><ul><li>Social media graphics</li><li>Promotional posters and banners</li><li>Simple logo concepts</li><li>YouTube thumbnails</li><li>Presentation graphics and other visuals</li></ul><a class="btn sm ghost pick" href="service-request.html?service=graphic-logo" data-service="Graphic & Logo Design">Discuss This Service</a></article>
+   <article class="card video-card"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="Video%20Editing%20video.mp4" type="video/mp4"></video><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-film"/></svg><h3>Video Editing &amp; YouTube Support</h3><p>Shape raw footage into organized, engaging video content suited to the platform and purpose.</p><ul><li>Basic video editing and trimming</li><li>Short-form video edits</li><li>Captions and subtitles where supported</li><li>Simple transitions and audio balancing</li><li>YouTube content preparation and post-production</li></ul><a class="btn sm ghost pick" href="service-request.html?service=video-youtube" data-service="Video Editing & YouTube Support">Discuss This Service</a></article>
+   <article class="card video-card"><video autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="Web%20dev%20video.mp4" type="video/mp4"></video><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-web"/></svg><h3>Website &amp; Digital Project Support</h3><p>Get practical support for selected digital tasks, website content, and online business projects.</p><ul><li>Simple landing page design and implementation</li><li>Website content organization</li><li>Basic Shopify store setup or content updates</li><li>Digital marketing research and planning</li><li>Project documentation and task organization</li></ul><a class="btn sm ghost pick" href="service-request.html?service=website-projects" data-service="Website & Digital Project Support">Discuss This Service</a></article>
+  </div>
+  <p class="note">Services depend on project requirements and demonstrated capability. Not every request will be a fit, and we will tell you honestly if it is not. Translation is not certified, and we do not offer specialist legal or medical translation.</p>
+ </div>
+</section>
+
+<section id="work" class="light">
+ <div class="wrap">
+  <p class="label">Selected projects</p>
+  <h2>A Look at What We Can Create</h2>
+  <p class="lead">Every project has a different goal. Our portfolio section showcases examples of the type of work Cup of Work can provide, from organized data and clear writing to visual design and edited video.</p>
+  <div class="grid">
+   <!-- To use real work: swap each <svg class="shot">…</svg> for <img src="images/your-file.jpg" alt="…"> -->
+   <article class="work"><svg class="shot" viewBox="0 0 320 200" role="img" aria-label="Sample spreadsheet with organized research data"><use href="#m1"/></svg><div class="body"><span class="tag">Sample Project</span><p class="cat">Research &amp; Data Support</p><h3>Research &amp; Spreadsheet Organization</h3><p>A sample research project demonstrating how information can be collected, categorized, and organized into a clear spreadsheet for easier review.</p><a class="btn sm blk pick" href="#contact" data-service="Research & Data Support">Discuss a Similar Project</a></div></article>
+   <article class="work"><svg class="shot" viewBox="0 0 320 200" role="img" aria-label="Sample formatted video script document"><use href="#m2"/></svg><div class="body"><span class="tag">Sample Project</span><p class="cat">Writing &amp; Content</p><h3>YouTube Script Development</h3><p>A sample video script structure showing an organized introduction, main talking points, transitions, and conclusion.</p><a class="btn sm blk pick" href="#contact" data-service="Writing & Content Development">Discuss a Similar Project</a></div></article>
+   <article class="work"><svg class="shot" viewBox="0 0 320 200" role="img" aria-label="Concept social media post in black and gold"><use href="#m3"/></svg><div class="body"><span class="tag">Concept Design</span><p class="cat">Graphic Design</p><h3>Social Media Graphic Design</h3><p>A sample promotional graphic designed with a consistent color palette, readable typography, and a clear message.</p><a class="btn sm blk pick" href="#contact" data-service="Graphic & Logo Design">Discuss a Similar Project</a></div></article>
+   <article class="work"><svg class="shot" viewBox="0 0 320 200" role="img" aria-label="Concept logo and brand color board"><use href="#m4"/></svg><div class="body"><span class="tag">Concept Design</span><p class="cat">Logo Design</p><h3>Logo &amp; Brand Visuals</h3><p>A sample brand identity concept showing how typography, color, and graphic elements can work together.</p><a class="btn sm blk pick" href="#contact" data-service="Graphic & Logo Design">Discuss a Similar Project</a></div></article>
+   <article class="work"><svg class="shot" viewBox="0 0 320 200" role="img" aria-label="Concept video editing timeline"><use href="#m5"/></svg><div class="body"><span class="tag">Practice Project</span><p class="cat">Video Editing</p><h3>Short-Form Video Editing</h3><p>A sample editing concept showing a structured video timeline, clean cuts, and suitable visual pacing.</p><a class="btn sm blk pick" href="#contact" data-service="Video Editing & YouTube Support">Discuss a Similar Project</a></div></article>
+   <article class="work"><svg class="shot" viewBox="0 0 320 200" role="img" aria-label="Concept landing page on desktop and mobile"><use href="#m6"/></svg><div class="body"><span class="tag">Concept Design</span><p class="cat">Website Support</p><h3>Landing Page Design</h3><p>A sample landing page concept demonstrating a clear headline, service presentation, portfolio area, and contact call to action.</p><a class="btn sm blk pick" href="#contact" data-service="Website & Digital Project Support">Discuss a Similar Project</a></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="why" class="dark">
+ <div class="wrap">
+  <h2>A Straightforward Approach to Digital Work</h2>
+  <div class="grid">
+   <div class="card"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-chat"/></svg><h3>Clear Communication</h3><p>We aim to understand the brief, confirm expectations, and communicate clearly throughout the project.</p></div>
+   <div class="card"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-target"/></svg><h3>Work Tailored to Your Needs</h3><p>Every project starts with your requirements, preferred format, and intended outcome.</p></div>
+   <div class="card"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-eye"/></svg><h3>Attention to Detail</h3><p>We focus on organization, readability, consistency, and the small details that improve the final deliverable.</p></div>
+   <div class="card"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-flex"/></svg><h3>Flexible Project-Based Support</h3><p>Request support for a defined task or a small project without needing to arrange a long-term engagement.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="process" class="light">
+ <div class="wrap">
+  <h2>From Your Idea to a Finished Deliverable</h2>
+  <ol class="steps">
+   <li><div class="n">01</div><h3>Tell Us About Your Project</h3><p>Contact us through WhatsApp or email. Explain what you need, your preferred deadline, and any relevant reference material.</p></li>
+   <li><div class="n">02</div><h3>Discuss the Requirements</h3><p>We review the project scope, clarify important details, and discuss the deliverables, estimated timeline, and price.</p></li>
+   <li><div class="n">03</div><h3>Work on the Project</h3><p>Once the scope and terms are agreed, we work on the project and communicate if clarification is needed.</p></li>
+   <li><div class="n">04</div><h3>Review the Deliverable</h3><p>We provide the agreed deliverable for review and handle any revisions included in the original agreement.</p></li>
+  </ol>
+  <a class="btn blk" href="#contact">Start Your Project</a>
+ </div>
+</section>
+
+<section class="callout" aria-labelledby="callout-h">
+ <div class="wrap">
+  <div><h2 id="callout-h">Have Something in Mind?</h2><p>Whether you need help organizing information, preparing content, creating digital visuals, or editing a video, tell us what you are working on.</p></div>
+  <a class="btn blk" href="#contact">Let’s Discuss Your Project</a>
+ </div>
+</section>
+
+<section id="contact" class="light">
+ <div class="wrap">
+  <p class="label">Let’s talk</p>
+  <h2>Tell Us About Your Project</h2>
+  <p class="lead">Have a project in mind? We would love to understand what you need. Share a few details about your goals, preferred deadline, and the type of support you are looking for. We will review your enquiry and respond as soon as we are available.</p>
+  <div class="cgrid">
+   <div class="light-card"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-whatsapp"/></svg><h3>Chat on WhatsApp</h3><p>Prefer a quick conversation? Send us your project details directly through WhatsApp.</p><br><a class="btn blk" data-wa href="#contact" target="_blank" rel="noopener">Contact Us on WhatsApp</a></div>
+   <div class="light-card"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-email"/></svg><h3>Email Your Enquiry</h3><p>For detailed requirements, project briefs, or reference files, send us an email.</p><br><a class="btn blk" data-mail href="#contact">Contact Us by Email</a></div>
+  </div>
+  <form id="enq">
+   <div><label for="f-name">Name</label><input id="f-name" required autocomplete="name"></div>
+   <div><label for="f-email">Email address</label><input id="f-email" type="email" required autocomplete="email"></div>
+   <div><label for="f-service">Service required</label><select id="f-service"><option value="">Select a service</option><option>Research &amp; Data Support</option><option>Writing &amp; Content Development</option><option>English Translation &amp; Editing</option><option>Graphic &amp; Logo Design</option><option>Video Editing &amp; YouTube Support</option><option>Website &amp; Digital Project Support</option><option>Something else</option></select></div>
+   <div><label for="f-deadline">Preferred deadline</label><input id="f-deadline" placeholder="e.g. 15 December"></div>
+   <div class="full"><label for="f-desc">Project description</label><textarea id="f-desc" required></textarea></div>
+   <div class="full"><label for="f-budget">Budget range</label><input id="f-budget" placeholder="e.g. USD 50–100"></div>
+   <div class="full"><button class="btn blk" type="submit">Prepare Email</button>
+    <p class="small" style="margin:.8rem 0 0">This opens your email app with these details filled in. Nothing is sent until you press send there.</p></div>
+  </form>
+  <p class="small" style="margin-top:1rem">Please share only the information needed to discuss your project. Do not send passwords, payment card details, or other sensitive information.</p>
+ </div>
+</section>
+
+<section id="faq" class="light" style="padding-top:0">
+ <div class="wrap" style="max-width:800px">
+  <h2>Frequently Asked Questions</h2>
+  <details><summary>What services do you provide?</summary><p>We offer selected project-based services across research, spreadsheets, data organization, writing, editing, design, video editing, and digital project support.</p></details>
+  <details><summary>How do I get a price?</summary><p>Pricing depends on the project scope, complexity, deliverables, and deadline. Contact us with your requirements to request a quote.</p></details>
+  <details><summary>Do you work with international clients?</summary><p>Yes. Cup of Work welcomes project enquiries from international clients, subject to project suitability and payment arrangements.</p></details>
+  <details><summary>How long does a project take?</summary><p>Timelines depend on the size and complexity of the project. We discuss an estimated delivery date before work begins.</p></details>
+  <details><summary>Can I request a custom service?</summary><p>Yes. If your request is related to our digital support capabilities, send us the details and we can discuss whether it is a suitable fit.</p></details>
+  <details><summary>Do you offer revisions?</summary><p>Revision arrangements are agreed before the project begins. The agreed scope and number of included revisions will be confirmed in the project discussion.</p></details>
+ </div>
+</section>
+
+<section class="char" aria-labelledby="final-h">
+ <div class="wrap" style="text-align:center">
+  <h2 id="final-h">Ready to Move Your Project Forward?</h2>
+  <p class="muted" style="max-width:52ch;margin:0 auto 1.6rem">Share your idea, explain what you need, and let’s discuss a practical way to get it done.</p>
+  <div class="btns" style="justify-content:center"><a class="btn" data-wa href="#contact" target="_blank" rel="noopener">Contact Us on WhatsApp</a><a class="btn ghost" data-mail href="#contact">Send Us an Email</a></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div><p style="color:#fff;font-weight:800;font-size:1.2rem;margin:0">Cup of Work</p><p style="margin:.3rem 0 0">Your Ideas. My Work.</p><p style="margin:0">Good work. One project at a time.</p>
+   <div class="soc">
+    <a data-wa href="#contact" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.2 18.6z"/></svg></a>
+    <a data-mail href="#contact" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+   </div></div>
+  <nav aria-label="Footer"><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#work">Our Work</a></li><li><a href="#contact">Contact Us</a></li></ul></nav>
+  <p class="copy">© <span id="yr">2026</span> Cup of Work. All rights reserved.</p>
+ </div>
+</footer>
+
+<script>
+/* ===== CONFIGURATION: edit only this block ===== */
+const CONFIG = {
+  whatsapp: "94785599834",                       // country code + number, digits only
+  email: "piyajalakmanaarachchi@gmail.com",
+  social: []                                     // add real links later, e.g. {name:"Instagram", url:"https://..."}
+};
+/* ================================================ */
+
+let service = "";
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+function waLink() {
+  const msg = `Hello Cup of Work! I found your website and would like to discuss a project.\n\nService I need: ${service}\nProject details:\nExpected deadline:\nBudget range:\n\nPlease let me know how we can proceed. Thank you!`;
+  return `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+}
+function mailLink(body) {
+  const b = body || `Hello Cup of Work,\n\nI would like to enquire about your digital services.\n\nService required: ${service}\nProject description:\nExpected deadline:\nBudget range:\nReference links or files:\n\nThank you.`;
+  return `mailto:${CONFIG.email}?subject=${encodeURIComponent("Project Enquiry - Cup of Work")}&body=${encodeURIComponent(b)}`;
+}
+function refresh() {
+  $$("[data-wa]").forEach(a => a.href = waLink());
+  $$("[data-mail]").forEach(a => a.href = mailLink());
+}
+refresh();
+
+$$(".pick").forEach(a => a.addEventListener("click", () => {
+  service = a.dataset.service;
+  $("#f-service").value = [...$("#f-service").options].find(o => o.textContent === service)?.value || "";
+  refresh();
+}));
+$("#f-service").addEventListener("change", e => { service = e.target.value; refresh(); });
+
+$("#enq").addEventListener("submit", e => {
+  e.preventDefault();
+  const v = id => $("#" + id).value.trim();
+  const body = `Hello Cup of Work,\n\nName: ${v("f-name")}\nEmail: ${v("f-email")}\nService required: ${v("f-service")}\nProject description: ${v("f-desc")}\nExpected deadline: ${v("f-deadline")}\nBudget range: ${v("f-budget")}\n\nThank you.`;
+  window.location.href = mailLink(body);
+});
+
+const btn = $("#menuBtn"), menu = $("#menu");
+btn.addEventListener("click", () => {
+  const open = menu.classList.toggle("open");
+  btn.setAttribute("aria-expanded", open);
+});
+$$("#menu a").forEach(a => a.addEventListener("click", () => { menu.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }));
+document.addEventListener("keydown", e => { if (e.key === "Escape") { menu.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); } });
+
+$("#yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
